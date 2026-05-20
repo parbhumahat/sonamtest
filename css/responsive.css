@@ -1,0 +1,130 @@
+/* ==========================================================================
+   Saffron & Salt — Responsive styles (mobile-first breakpoints)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Tablet — max 900px
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .story-teaser        { grid-template-columns: 1fr; gap: 2.5rem; }
+  .story-teaser-img    { order: -1; }
+  .story-teaser-img img{ height: 280px; }
+
+  .specials-grid       { grid-template-columns: 1fr; }
+  .special-card        { border-right: none; border-bottom: 1px solid var(--border); }
+  .special-card:last-child { border-bottom: none; }
+
+  .reservation-wrap    { grid-template-columns: 1fr; }
+  .contact-wrap        { grid-template-columns: 1fr; }
+
+  .team-grid           { grid-template-columns: repeat(2, 1fr); }
+  .about-story         { grid-template-columns: 1fr; gap: 2rem; }
+
+  .footer-inner        { grid-template-columns: 1fr 1fr; row-gap: 2.5rem; }
+
+  .menu-grid           { grid-template-columns: 1fr; }
+
+  .gallery-grid        { columns: 2; }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile — max 640px
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  :root { --gap: 1.25rem; }
+
+  /* Navigation */
+  .nav-toggle { display: flex; }
+
+  .main-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--midnight);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .main-nav.open { display: flex; }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .main-nav a {
+    font-size: 1.4rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    padding: 0.75rem 1rem;
+    color: var(--cream);
+  }
+  .main-nav a.nav-cta {
+    margin-top: 1rem;
+    margin-left: 0;
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+    font-style: normal;
+  }
+
+  /* Hero */
+  .hero-eyebrow { font-size: 0.7rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .hero-actions .btn { width: 100%; max-width: 300px; text-align: center; }
+
+  /* Forms */
+  .form-row { grid-template-columns: 1fr; }
+  .form-card { padding: 1.5rem; }
+
+  /* Sections */
+  .section       { padding: 4rem 0; }
+  .section--tight{ padding: 2.5rem 0; }
+
+  /* About */
+  .team-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+  /* Gallery */
+  .gallery-grid { columns: 1; }
+
+  /* Footer */
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+
+  /* Auth */
+  .auth-wrap { padding: 0; }
+
+  /* Reservations */
+  .reservation-wrap { gap: 3rem; }
+
+  /* Contact */
+  .contact-wrap { gap: 2.5rem; }
+
+  /* Page hero padding */
+  .page-hero { padding: 8rem 0 3rem; }
+
+  /* Bookings table horizontal scroll */
+  .bookings-table th,
+  .bookings-table td { padding: 0.6rem 0.5rem; font-size: 0.8rem; }
+
+  /* Lightbox prev/next */
+  .lightbox-prev { left: 0.5rem; padding: 0.75rem; }
+  .lightbox-next { right: 0.5rem; padding: 0.75rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Very small — max 380px
+   -------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .hero-content { padding-top: 5rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion — respect OS preference
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html    { scroll-behavior: auto; }
+}
